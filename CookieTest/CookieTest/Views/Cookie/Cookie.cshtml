@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+@model CookieTest.Models.CookieInformationModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @if(@Model.CookieSet)
+        {
+            <h2>Cookie set for @Model.Name with SameSite: @Model.SameSite @(Model.isSecureSet ? "Secure Attribute Set":"") @(Model.isHttpSet ? "HttpOnly Attribute Set": "")</h2>       
+        }
+        else
+        {
+        <h2>Cookie was not set</h2>
+        }
+        @Html.ActionLink("Cookie List", "Index");
+    </div>
+</body>
+</html>
